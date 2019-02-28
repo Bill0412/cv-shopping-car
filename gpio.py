@@ -8,6 +8,6 @@ try:
 
 	while True:
 		GPIO.output(21, GPIO.HIGH)
-		
-except: 
+
+except KeyboardInterrupt: 
 	GPIO.cleanup()
