@@ -1,11 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.cleanup()
+try:
+	GPIO.setmode(GPIO.BCM)
 
-GPIO.setmode(GPIO.BCM)
+	GPIO.setup(21, GPIO.OUT)
 
-GPIO.setup(21, GPIO.OUT)
-
-while True:
-	GPIO.output(21, GPIO.HIGH)
+	while True:
+		GPIO.output(21, GPIO.HIGH)
+		
+except: 
+	GPIO.cleanup()
